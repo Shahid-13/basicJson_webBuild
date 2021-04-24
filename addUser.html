@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="addUser.css">
+</head>
+<style>
+  
+</style>
+
+<body>
+  <div>
+  <form name="forms" id="forms">
+      <h1>User Info</h1>
+      <label>Username</label>
+      <input class="form-control" name="USERNAME" type="text" />
+      <label>Email</label>
+      <input class="form-control" name="EMAIL" type="email" />
+      <label>Phone</label>
+      <input class="form-control" name="PHONE" type="text" />
+      <label>Address</label>
+      <input class="form-control" name="ADDRESS" type="text" />
+      <label>Role</label>
+      <select class="btn" name="ROLE" name="cars">
+        <option value="Admin">Admin</option>
+        <option value="Member">Member</option>
+        <option value="Guest">Guest</option>
+      </select>
+    </form>
+    <button class="btn" type="button" id="submit" onclick="getData()">Submit</button>
+  </div>
+
+  <script src="addUser.js"></script>
+</body>
+</html>

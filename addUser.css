@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    /* align-items: center; */
+    flex-direction: row;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-image: url(downd.jpg);
+}
+
+.form-control{
+    width: 350px;
+    padding: 12px 20px;
+    display: inline;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.btn {
+    background-color: #005F9E;
+    border: none;
+    border-radius: 0;
+    color: white;
+    padding: 12px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+label{
+  display: block;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
