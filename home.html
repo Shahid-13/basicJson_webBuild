@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="home.css">
+    </head>
+    <body onload="fetchJson()">
+        <div class="container">
+            <input type="button" value="Add User" class="btn" onclick="addData()">
+            <input class="search" placeholder="Search by Username.. " onkeyup="searchData()" id="search" />
+            <p>Role:<select id="role-filter"name="role" class="btn" onchange="roleFilter()">
+                <option id="default" value="default" >Default</option>
+                <option id="admin" value="Admin">Admin</option>
+                <option id="member" value="Member" >Member</option>
+                <option id="guest" value="Guest">Guest</option>
+              </select></p>
+            <!-- <p>Status:<select id="status-filter"name="role" class="btn" onchange="statusFilter()">
+                <option id="default" value="default" >Default</option>
+                <option id="online" value="Online">Online</option>
+                <option id="offline" value="Offline" >Offline</option>
+              </select></p> -->
+            <div class = "outerdiv" id="result"> 
+                <p id="showData"></p>
+            </div>
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                <div>
+                    <form name="editforms" id="editforms">
+                        <h1>Edit User Info</h1>
+                        <label>Username</label>
+                        <input class="form-control" name="editname" id="editName" type="text" />
+                        <label>Email</label>
+                        <input class="form-control" name="editemail" id="editEmail" type="email" />
+                        <label>Phone</label>
+                        <input class="form-control" name="editphone" id="editPhone" type="text" />
+                        <label>Address</label>
+                        <input class="form-control" name="editaddress" id="editAddress" type="text" /><br><br>
+                        <!-- <label>Add Display Picture</label> -->
+                        <!-- <input class="avatar" name="editavatar" id="editAvatar" type="file" /><br/><br/> -->
+                        <input class="is_active" name="editis_active" type="checkbox" id="editis_active"/>
+                        <label class="is_active">Active</label>
+                        <label>Role</label>
+                        <select class="btn" name="editrole" id="editRole">
+                          <option value="ADMIN">Admin</option>
+                          <option value="MEMBER">Member</option>
+                          <option value="GUEST">Guest</option>
+                        </select>
+                        <input name="editid" id="editid" type="hidden"/>
+                        <input name="editcreatedat" id="editcreatedat" type="hidden"/>
+                        <input name="editupdatedat" id="editupdatedat" type="hidden"/>
+                        <input name="editavatar" id="editavatar" type="hidden"/>
+                          
+                    </form>
+                    <button class="btn" type="button" id="editSubmit" onclick="editData(document.getElementById('editforms'))">Submit</button>
+                </div>
+                </div>
+            </div>
+
+            <div id="deleteModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p> Are you sure you want to delete this item? </p>
+                    <input type="button" value="Delete" id="delete-btn" class="deletebtn" onclick="deleteData()"/>
+                    <input type="button" value="Cancel" id="cancel-btn" class="cancelbtn"/>
+                </div>
+            </div>
+            </div>
+            <div id="addModal" class="modal">
+                <div class="modal-content">
+                    <div>
+                        <form name="addforms" id="addforms">
+                            <h1>User Info</h1>
+                            <label>Username</label>
+                            <input class="form-control" name="name" id="name" type="text" />
+                            <label>Email</label>
+                            <input class="form-control" name="email" id="email" type="email" />
+                            <label>Phone</label>
+                            <input class="form-control" name="phone" id="phone" type="text" />
+                            <label>Address</label>
+                            <input class="form-control" name="address" id="address" type="text" /><br><br>
+                            <!-- <label>Add Display Picture</label>
+                            <input class="avatar" name="avatar" id="avatar" type="file" /><br/><br/> -->
+                            <input class="is_active" name="is_active" type="checkbox" id="is_active"/>
+                            <label class="is_active">Active</label>
+                            <label>Role</label>
+                            <select class="btn" name="role" id="role">
+                              <option value="ADMIN">Admin</option>
+                              <option value="MEMBER">Member</option>
+                              <option value="GUEST">Guest</option>
+                            </select>
+                            <input name="createdat" id="createdat" type="hidden"/>
+                            <input name="updatedat" id="updatedat" type="hidden"/>
+                            <!-- <input name="avatar" id="avatar" type="hidden"/> -->
+                              
+                        </form>
+                        <button class="btn" type="button" id="addSubmit" onclick="addData()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="deleteData" value=""/>
+        <input type="hidden" id="editData" value=""/>
+    </body>
+    <script src="home.js"></script>
+    
+</html>
